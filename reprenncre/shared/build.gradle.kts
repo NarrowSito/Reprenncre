@@ -1,5 +1,6 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidMultiplatformLibrary)
@@ -27,6 +28,7 @@ kotlin {
     }
 
     sourceSets {
+        val fontLib = "androidx.compose.ui:ui-text:1.11.2"
         androidMain.dependencies {
             implementation(libs.compose.uiToolingPreview)
         }
@@ -39,6 +41,7 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation(fontLib)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
